@@ -1,12 +1,12 @@
 @charset "UTF-8";
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1em;
     background-color: lightgrey;
@@ -14,38 +14,73 @@ body{
     width: 100vw;
 }
 
-header{
+header {
     background-color: grey;
     padding: 10px;
     margin-bottom: 10px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header h1{
+header h1 {
     color: white;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.551);
+
+    flex: 0 0 300px;
 }
 
-header nav{
+header nav {
     margin: 15px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
 }
 
 header a {
-    padding: 10px;
-    border-radius: 4px;
-
-    text-decoration: none;
     
+    font-size: 0.8em;
+    margin: 5px;
+    padding: 8px;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+
     color: white;
     background-color: black;
 }
 
-header a:hover{
+header a:hover {
     color: rgb(84, 84, 84);
     background-color: white;
+    transition: background-color 0.4s;
 }
 
 
+@media screen and (max-width:550px) {
+    header {
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
 
+    header h1{
+        flex: 0;
+    }
+
+    header nav{
+        flex-flow: column wrap;
+    }
+
+    nav a{
+        font-size: 0.7em;
+        padding: 3px;
+        width: 80vw;
+    }
+
+}
 
 
 main {
